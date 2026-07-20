@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ebook Leve & Forte: hábitos simples e sustentáveis para perder peso sem sofrimento e sem efeito sanfona.">
+<meta name="color-scheme" content="light dark">
+<title>Leve & Forte — O Método Definitivo para Perder Peso Sem Sofrimento</title>
+<style>
+  :root {
+    --bg: #F1E8DB;
+    --bg-alt: #E7DAC5;
+    --surface: #FFFBF3;
+    --ink: #2A211C;
+    --ink-soft: #6B5D4F;
+    --ink-faint: #8C7C6B;
+    --accent: #7C2338;
+    --accent-soft: #9C3A50;
+    --accent-ink: #FCEFE9;
+    --gold: #B8892A;
+    --gold-soft: #E7C878;
+    --line: #D8C8AE;
+    --shadow: rgba(43, 30, 20, 0.18);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1E1712;
+      --bg-alt: #271E17;
+      --surface: #241B15;
+      --ink: #F1E6D8;
+      --ink-soft: #C9B8A4;
+      --ink-faint: #9A8873;
+      --accent: #D9576F;
+      --accent-soft: #C43A54;
+      --accent-ink: #2A0E14;
+      --gold: #E2B85A;
+      --gold-soft: #7A5C22;
+      --line: #3A2D22;
+      --shadow: rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1E1712; --bg-alt: #271E17; --surface: #241B15;
+    --ink: #F1E6D8; --ink-soft: #C9B8A4; --ink-faint: #9A8873;
+    --accent: #D9576F; --accent-soft: #C43A54; --accent-ink: #2A0E14;
+    --gold: #E2B85A; --gold-soft: #7A5C22; --line: #3A2D22;
+    --shadow: rgba(0,0,0,0.55);
+  }
+  :root[data-theme="light"] {
+    --bg: #F1E8DB; --bg-alt: #E7DAC5; --surface: #FFFBF3;
+    --ink: #2A211C; --ink-soft: #6B5D4F; --ink-faint: #8C7C6B;
+    --accent: #7C2338; --accent-soft: #9C3A50; --accent-ink: #FCEFE9;
+    --gold: #B8892A; --gold-soft: #E7C878; --line: #D8C8AE;
+    --shadow: rgba(43, 30, 20, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Optima', 'Candara', 'Segoe UI', 'Noto Sans', sans-serif;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, blockquote {
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--accent); color: var(--accent-ink); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.4em;
+    height: 1px;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .wrap-wide { max-width: 980px; margin: 0 auto; padding: 0 1.5rem; }
+
+  section { position: relative; }
+  .band { padding: 5rem 0; }
+  .band-alt { background: var(--bg-alt); }
+  .band-surface { background: var(--surface); }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    padding: 6.5rem 0 4.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -18%;
+    right: -12%;
+    width: 62vw;
+    height: 62vw;
+    max-width: 640px;
+    max-height: 640px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--accent-soft), transparent 70%);
+    opacity: 0.16;
+    filter: blur(4px);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero h1 {
+    font-size: clamp(2.3rem, 4.6vw + 1rem, 3.9rem);
+    font-weight: 500;
+    line-height: 1.12;
+    max-width: 15ch;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero .lede {
+    margin-top: 1.6rem;
+    max-width: 46ch;
+    font-size: 1.18rem;
+    color: var(--ink-soft);
+  }
+  .hero .cta-row { margin-top: 2.4rem; display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; }
+  .trust-line {
+    margin-top: 2.6rem;
+    display: flex;
+    gap: 1.8rem;
+    flex-wrap: wrap;
+    font-size: 0.86rem;
+    color: var(--ink-faint);
+  }
+  .trust-line span { display: flex; align-items: center; gap: 0.5em; }
+  .trust-line span::before { content: "◆"; color: var(--gold); font-size: 0.6em; }
+
+  /* ---------- BUTTONS ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    padding: 1rem 2rem;
+    border-radius: 3px;
+    font-family: var(--font-body, inherit);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+    box-shadow: 0 10px 24px -10px var(--shadow);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px var(--shadow); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-block { width: 100%; }
+  .btn-lg { padding: 1.15rem 2.4rem; font-size: 1.08rem; }
+
+  /* ---------- DORES ---------- */
+  .pain-list {
+    list-style: none;
+    margin: 2.4rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .pain-list li {
+    background: var(--bg-alt);
+    padding: 1.3rem 1.6rem;
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    font-size: 1.02rem;
+  }
+  .pain-list li::before {
+    content: "";
+    flex: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: 0.5em;
+  }
+
+  /* ---------- VIRADA (antes/depois) ---------- */
+  .flip {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .flip { grid-template-columns: 1fr; } }
+  .flip-col { padding: 2.2rem 2rem; }
+  .flip-old {
+    background: var(--bg);
+    color: var(--ink-faint);
+  }
+  .flip-new {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .flip-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    display: block;
+    opacity: 0.85;
+  }
+  .flip ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.85rem; }
+  .flip-old li { text-decoration: line-through; text-decoration-color: var(--ink-faint); text-decoration-thickness: 1px; }
+  .flip-new li::before { content: "→ "; font-weight: 700; }
+
+  /* ---------- TABLE OF CONTENTS (capítulos) ---------- */
+  .toc { margin-top: 3rem; border-top: 1px solid var(--line); }
+  .toc-item {
+    display: flex;
+    gap: 1.4rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline;
+  }
+  .toc-num {
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    flex: none;
+    width: 2.4ch;
+  }
+  .toc-body h3 {
+    font-size: 1.12rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .toc-body p { margin-top: 0.4rem; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* ---------- DEPOIMENTOS (placeholder) ---------- */
+  .testi-grid {
+    margin-top: 2.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  .testi-card {
+    border: 1.5px dashed var(--line);
+    border-radius: 4px;
+    padding: 1.6rem;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--ink-faint);
+    font-size: 0.92rem;
+  }
+  .testi-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .authority-note {
+    margin-top: 2.4rem;
+    padding: 1.6rem 1.8rem;
+    background: var(--bg-alt);
+    border-left: 3px solid var(--gold);
+    font-size: 0.98rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- BONUS ---------- */
+  .bonus-grid {
+    margin-top: 2.6rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.6rem;
+  }
+  .bonus-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1.8rem;
+    box-shadow: 4px 4px 0 var(--line);
+  }
+  .bonus-card .eyebrow { margin-bottom: 0.9rem; }
+  .bonus-card h3 { font-size: 1.1rem; font-weight: 500; }
+  .bonus-card p { margin-top: 0.6rem; font-size: 0.94rem; color: var(--ink-soft); }
+
+  /* ---------- OFERTA ---------- */
+  .offer-card {
+    margin-top: 3rem;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 3rem 2.6rem;
+    text-align: center;
+    position: relative;
+  }
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.4rem 0 0.4rem;
+    flex-wrap: wrap;
+  }
+  .price-old {
+    font-size: 1.3rem;
+    color: var(--ink-faint);
+    text-decoration: line-through;
+    font-family: 'Iowan Old Style', Georgia, serif;
+  }
+  .price-new {
+    font-size: 3.2rem;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  .price-sub { font-size: 0.9rem; color: var(--ink-faint); margin-top: 0.3rem; }
+  .includes { margin: 2.2rem auto 0; max-width: 380px; text-align: left; list-style: none; padding: 0; display: grid; gap: 0.7rem; }
+  .includes li { display: flex; gap: 0.7em; font-size: 0.98rem; }
+  .includes li::before { content: "✓"; color: var(--gold); font-weight: 700; }
+  .urgency {
+    margin-top: 2.2rem;
+    display: inline-block;
+    background: var(--accent);
+    color: var(--accent-ink);
+    padding: 0.55rem 1.1rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    border-radius: 2px;
+  }
+  .offer-card .btn { margin-top: 2rem; }
+
+  /* ---------- GARANTIA (selo) ---------- */
+  .guarantee { display: flex; gap: 2.4rem; align-items: center; flex-wrap: wrap; }
+  .seal {
+    flex: none;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: var(--gold);
+    font-family: 'Iowan Old Style', Georgia, serif;
+  }
+  .seal::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  .seal strong { font-size: 1.9rem; display: block; line-height: 1; }
+  .seal span { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .guarantee-text { flex: 1; min-width: 240px; }
+
+  /* ---------- FAQ ---------- */
+  .faq-item {
+    border-bottom: 1px solid var(--line);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 1.4rem 0;
+    font-family: 'Iowan Old Style', Georgia, serif;
+    font-size: 1.12rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--accent);
+    flex: none;
+    transition: transform 0.2s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding: 0 0 1.5rem; max-width: 62ch; color: var(--ink-soft); }
+
+  /* ---------- CTA FINAL ---------- */
+  .final-band {
+    background: var(--accent);
+    color: var(--accent-ink);
+    text-align: center;
+    padding: 5.5rem 0;
+  }
+  .final-band h2 { font-size: clamp(1.9rem, 3.4vw + 1rem, 2.8rem); max-width: 18ch; margin: 0 auto; }
+  .final-band .lede { margin: 1.4rem auto 0; max-width: 48ch; opacity: 0.9; font-size: 1.08rem; }
+  .final-band .btn-primary { background: var(--accent-ink); color: var(--accent); margin-top: 2.2rem; }
+  .final-band .fine { margin-top: 1.4rem; font-size: 0.82rem; opacity: 0.75; }
+
+  footer {
+    padding: 2.8rem 0 6rem;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    text-align: center;
+  }
+  footer p + p { margin-top: 0.6rem; }
+
+  /* ---------- STICKY MOBILE CTA ---------- */
+  .sticky-cta {
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    padding: 0.8rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    transform: translateY(120%);
+    transition: transform 0.35s ease;
+    z-index: 40;
+  }
+  .sticky-cta.show { transform: translateY(0); }
+  .sticky-cta .price-new { font-size: 1.4rem; }
+  .sticky-cta .btn { padding: 0.75rem 1.3rem; font-size: 0.92rem; }
+  @media (min-width: 860px) { .sticky-cta { display: none; } }
+
+  h2.section-title { font-size: clamp(1.7rem, 2.6vw + 1rem, 2.3rem); font-weight: 500; margin-top: 0.8rem; max-width: 20ch; }
+  .section-head { max-width: 620px; }
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-inner reveal in">
+      <span class="eyebrow">Método Leve & Forte · Ebook digital</span>
+      <h1>Cansada de emagrecer e <em>recuperar tudo</em> de novo?</h1>
+      <p class="lede">Descubra por que as dietas que você já tentou não falharam por falta de força de vontade — e como sair do efeito sanfona de vez, sem sofrimento e sem restrição extrema.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary btn-lg" href="#oferta">Quero emagrecer sem sofrimento</a>
+        <a class="btn btn-ghost" href="#metodo">Conhecer o método</a>
+      </div>
+      <div class="trust-line">
+        <span>Hábitos sustentáveis, não restrição</span>
+        <span>Base em ciência comportamental</span>
+        <span>Garantia de 7 dias</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DORES -->
+  <section class="band band-alt">
+    <div class="wrap reveal">
+      <span class="eyebrow">Isso soa familiar?</span>
+      <h2 class="section-title">Você já tentou de tudo — e o problema nunca foi você</h2>
+      <ul class="pain-list">
+        <li>Já tentou várias dietas — low carb, jejum, shakes, contagem de macros — e sempre volta ao ponto de partida (ou pior).</li>
+        <li>Sente culpa toda vez que come algo "fora da dieta", como se tivesse estragado tudo de novo.</li>
+        <li>Vive prometendo "segunda-feira eu começo" — e a segunda chega com a mesma sensação de recomeço do zero.</li>
+        <li>Já emagreceu antes, mas o peso sempre volta — e às vezes traz companhia.</li>
+        <li>Não tem tempo nem paciência para planilhas de calorias ou rotinas de academia impossíveis de manter.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- VIRADA DE CHAVE -->
+  <section class="band" id="metodo">
+    <div class="wrap reveal">
+      <span class="eyebrow">A virada de chave</span>
+      <h2 class="section-title">Restrição extrema é insustentável por design</h2>
+      <p style="margin-top:1.1rem; max-width:62ch; color:var(--ink-soft);">Dietas radicais não falham por falta de disciplina — falham porque exigem mais do que qualquer pessoa consegue manter para sempre. Quanto mais você proíbe, mais intenso fica o desejo, até o dia em que a força de vontade não é mais suficiente. <strong style="color:var(--ink);">Leve & Forte</strong> parte de outro princípio: hábitos automáticos no lugar de força de vontade, ajustes pequenos no lugar de restrição total.</p>
+      <div class="flip">
+        <div class="flip-col flip-old">
+          <span class="flip-label">Dieta tradicional</span>
+          <ul>
+            <li>Contagem obsessiva de calorias e macros</li>
+            <li>Listas de alimentos "proibidos"</li>
+            <li>Promessas de resultado relâmpago</li>
+            <li>Plano genérico, igual para todo mundo</li>
+          </ul>
+        </div>
+        <div class="flip-col flip-new">
+          <span class="flip-label">Método Leve & Forte</span>
+          <ul>
+            <li>Hábitos automáticos que dispensam força de vontade</li>
+            <li>Nenhum alimento proibido</li>
+            <li>Progresso real, feito para durar</li>
+            <li>Se molda à sua rotina, não o contrário</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE VOCÊ VAI APRENDER -->
+  <section class="band band-alt">
+    <div class="wrap reveal section-head">
+      <span class="eyebrow">Dentro do ebook</span>
+      <h2 class="section-title">10 capítulos, 10 obstáculos reais resolvidos</h2>
+    </div>
+    <div class="wrap">
+      <div class="toc">
+        <div class="toc-item">
+          <span class="toc-num">01</span>
+          <div class="toc-body"><h3>Como parar o ciclo de culpa e recomeçar sem culpa toda segunda-feira</h3><p>Entenda por que a lógica de "tudo ou nada" é a armadilha que sabota todo o resto.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">02</span>
+          <div class="toc-body"><h3>Como identificar os hábitos que realmente sabotam seu progresso</h3><p>E não são o que você imagina.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">03</span>
+          <div class="toc-body"><h3>Como comer o que você gosta sem descontrole</h3><p>O fim da lógica de "proibido x permitido".</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">04</span>
+          <div class="toc-body"><h3>Como criar uma rotina alimentar que sobrevive a dias corridos e imprevistos</h3><p>Sem depender de planejamento perfeito.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">05</span>
+          <div class="toc-body"><h3>Como lidar com vontade de doce e beliscos sem recorrer à força de vontade</h3><p>Estratégias práticas, não promessas vazias.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">06</span>
+          <div class="toc-body"><h3>Como montar refeições equilibradas sem pesar, contar ou calcular nada</h3><p>Um jeito simples de olhar para o prato.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">07</span>
+          <div class="toc-body"><h3>Como manter resultados em festas e finais de semana</h3><p>Sem "compensar" com restrição extrema depois.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">08</span>
+          <div class="toc-body"><h3>Como construir consistência mesmo sem motivação todos os dias</h3><p>Motivação não é o ingrediente principal — hábito é.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">09</span>
+          <div class="toc-body"><h3>Como reconhecer sinais reais de fome e saciedade</h3><p>E parar de comer no piloto automático.</p></div>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">10</span>
+          <div class="toc-body"><h3>Como transformar essas mudanças em algo permanente</h3><p>Sem depender de "mais uma dieta" no futuro.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA / AUTORIDADE -->
+  <section class="band">
+    <div class="wrap reveal">
+      <span class="eyebrow">O que dizem as leitoras</span>
+      <h2 class="section-title">Resultado de método, não de sorte</h2>
+      <div class="testi-grid">
+        <div class="testi-card"><span class="testi-tag">Depoimento 1</span><p>Espaço reservado — inserir nome, foto e relato real da leitora aqui.</p></div>
+        <div class="testi-card"><span class="testi-tag">Depoimento 2</span><p>Espaço reservado — inserir nome, foto e relato real da leitora aqui.</p></div>
+        <div class="testi-card"><span class="testi-tag">Depoimento 3</span><p>Espaço reservado — inserir nome, foto e relato real da leitora aqui.</p></div>
+      </div>
+      <p class="authority-note">O método <strong>Leve & Forte</strong> não se baseia em modismos, mas em princípios de <strong>ciência comportamental e formação de hábitos</strong> — a mesma abordagem usada em programas de mudança de comportamento de longo prazo, adaptada para a rotina real de quem já tentou de tudo.</p>
+    </div>
+  </section>
+
+  <!-- BONUS -->
+  <section class="band band-alt">
+    <div class="wrap reveal">
+      <span class="eyebrow">Incluso na compra</span>
+      <h2 class="section-title">Três ferramentas para sair do papel</h2>
+      <div class="bonus-grid">
+        <div class="bonus-card">
+          <span class="eyebrow">Bônus 01</span>
+          <h3>Checklist imprimível de hábitos diários</h3>
+          <p>Acompanhe seu progresso sem depender de força de vontade.</p>
+        </div>
+        <div class="bonus-card">
+          <span class="eyebrow">Bônus 02</span>
+          <h3>Planejamento semanal de refeições</h3>
+          <p>Organize sua semana em minutos, sem complicação.</p>
+        </div>
+        <div class="bonus-card">
+          <span class="eyebrow">Bônus 03</span>
+          <h3>Lista de compras saudável</h3>
+          <p>Leve para o mercado e elimine a dúvida na hora de escolher.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA -->
+  <section class="band" id="oferta">
+    <div class="wrap reveal">
+      <span class="eyebrow">Oferta</span>
+      <h2 class="section-title">Garanta seu exemplar com os três bônus</h2>
+      <div class="offer-card">
+        <span class="eyebrow">Leve & Forte + bônus</span>
+        <div class="price-row">
+          <span class="price-old">R$ 197</span>
+          <span class="price-new">R$ 47</span>
+        </div>
+        <p class="price-sub">à vista ou em até 12x no cartão</p>
+        <ul class="includes">
+          <li>Ebook completo "Leve & Forte" em PDF — acesso imediato</li>
+          <li>Checklist de hábitos diários</li>
+          <li>Planejador semanal de refeições</li>
+          <li>Lista de compras saudável</li>
+        </ul>
+        <div><span class="urgency">Os 3 bônus são por tempo limitado</span></div>
+        <div><a class="btn btn-primary btn-lg" href="#">Quero meu exemplar + bônus agora</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTIA -->
+  <section class="band band-surface">
+    <div class="wrap reveal">
+      <div class="guarantee">
+        <div class="seal"><span>Garantia<br>incondicional</span><strong>7</strong><span>dias</span></div>
+        <div class="guarantee-text">
+          <h2 class="section-title" style="max-width:none;">O risco é todo nosso</h2>
+          <p style="margin-top:0.9rem; color:var(--ink-soft); max-width:56ch;">Leia o ebook, aplique os primeiros hábitos e, se por qualquer motivo sentir que não é para você, basta enviar um e-mail dentro de 7 dias para receber 100% do seu dinheiro de volta. Sem perguntas, sem burocracia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="band">
+    <div class="wrap reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2 class="section-title" style="margin-bottom:1rem;">Antes de você decidir</h2>
+      <div>
+        <details class="faq-item">
+          <summary>Funciona para qualquer idade?</summary>
+          <p>Sim. O método é baseado em hábitos alimentares e comportamentais aplicáveis a adultos de qualquer faixa etária. Se você tem alguma condição de saúde específica, recomendamos conversar com seu médico antes de iniciar qualquer mudança alimentar.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso fazer academia ou algum exercício específico?</summary>
+          <p>Não. O foco do ebook é a relação com a comida e os hábitos alimentares. Atividade física é bem-vinda, mas não é pré-requisito para aplicar o método.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como recebo o material?</summary>
+          <p>Assim que a compra for confirmada, você recebe o link de acesso por e-mail para baixar o ebook e os bônus em PDF, disponíveis para leitura em celular, tablet ou computador.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Preciso cortar carboidrato, açúcar ou algum grupo alimentar?</summary>
+          <p>Não. O método não se baseia em cortes radicais ou grupos alimentares proibidos, e sim em equilíbrio e consistência sustentável.</p>
+        </details>
+        <details class="faq-item">
+          <summary>E se eu não gostar do conteúdo?</summary>
+          <p>Você tem 7 dias de garantia incondicional para pedir reembolso total, sem burocracia.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-band">
+    <div class="wrap reveal">
+      <h2>Chega de recomeçar toda segunda-feira</h2>
+      <p class="lede">Você já tentou dietas restritivas. Chegou a hora de tentar algo diferente: um método que funciona com a sua rotina, não contra ela.</p>
+      <a class="btn btn-primary btn-lg" href="#oferta">Sim, quero emagrecer sem sofrimento — R$ 47</a>
+      <p class="fine">Acesso imediato · Garantia de 7 dias · Bônus por tempo limitado</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Leve & Forte é um material educativo sobre hábitos alimentares. Resultados variam de pessoa para pessoa.</p>
+      <p>Consulte um profissional de saúde antes de iniciar qualquer mudança alimentar significativa.</p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="stickyCta">
+    <span class="price-new">R$ 47</span>
+    <a class="btn btn-primary" href="#oferta">Quero o meu</a>
+  </div>
+
+</main>
+
+<script>
+  (function () {
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    var hero = document.querySelector('.hero');
+    var sticky = document.getElementById('stickyCta');
+    if (hero && sticky && 'IntersectionObserver' in window) {
+      var heroIo = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          sticky.classList.toggle('show', !e.isIntersecting);
+        });
+      }, { threshold: 0 });
+      heroIo.observe(hero);
+    }
+  })();
+</script>
+</body>
+</html>
