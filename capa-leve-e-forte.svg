@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" role="img" aria-labelledby="capaTitulo">
+  <title id="capaTitulo">Capa do ebook Leve & Forte</title>
+  <defs>
+    <filter id="capaSombra" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity="0.28"/>
+    </filter>
+    <filter id="capaBrilho" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+    <linearGradient id="capaFundo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FAF7EF"/>
+      <stop offset="1" stop-color="#F3EEE3"/>
+    </linearGradient>
+  </defs>
+  <g filter="url(#capaSombra)">
+    <rect x="30" y="30" width="420" height="580" rx="4" fill="#E9E0CD" stroke="#DED2B8" stroke-width="1.5"/>
+    <rect x="20" y="20" width="420" height="580" rx="4" fill="#FAF7EF" stroke="#DED2B8" stroke-width="1.5"/>
+    <rect x="10" y="10" width="420" height="580" rx="4" fill="url(#capaFundo)" stroke="#DED2B8" stroke-width="1.5"/>
+    <circle cx="340" cy="130" r="120" fill="#DDA179" opacity="0.18" filter="url(#capaBrilho)"/>
+    <line x1="50" y1="90" x2="74" y2="90" stroke="#C97A4E" stroke-width="1.5"/>
+    <text x="82" y="95" font-family="Optima,Candara,'Segoe UI',sans-serif" font-size="13" letter-spacing="2" fill="#C97A4E" font-weight="600">GUIA PRÁTICO</text>
+    <text x="48" y="205" font-family="'Iowan Old Style','Palatino Linotype','Book Antiqua',Georgia,serif" font-size="66" fill="#3A3327">Leve</text>
+    <text x="48" y="278" font-family="'Iowan Old Style','Palatino Linotype','Book Antiqua',Georgia,serif" font-size="66" fill="#3A3327"><tspan fill="#8CA070">&amp;</tspan> Forte</text>
+    <line x1="50" y1="310" x2="150" y2="310" stroke="#8CA070" stroke-width="2"/>
+    <text font-family="Optima,Candara,'Segoe UI',sans-serif" font-size="23" fill="#756B57">
+      <tspan x="50" y="352">Hábitos simples e</tspan>
+      <tspan x="50" y="386">sustentáveis para</tspan>
+      <tspan x="50" y="420">perder peso de vez</tspan>
+    </text>
+    <line x1="50" y1="520" x2="390" y2="520" stroke="#DED2B8" stroke-width="1.5"/>
+    <text x="50" y="548" font-family="Optima,Candara,'Segoe UI',sans-serif" font-size="12.5" letter-spacing="1.5" fill="#9C9280">EBOOK DIGITAL · PDF</text>
+  </g>
+</svg>
