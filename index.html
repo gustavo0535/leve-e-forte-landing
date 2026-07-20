@@ -314,23 +314,6 @@
     color: var(--ink-soft);
   }
 
-  /* ---------- BONUS ---------- */
-  .bonus-grid {
-    margin-top: 2.6rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 1.6rem;
-  }
-  .bonus-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 1.8rem;
-    box-shadow: 4px 4px 0 var(--line);
-  }
-  .bonus-card .eyebrow { margin-bottom: 0.9rem; }
-  .bonus-card h3 { font-size: 1.1rem; font-weight: 500; }
-  .bonus-card p { margin-top: 0.6rem; font-size: 0.94rem; color: var(--ink-soft); }
-
   /* ---------- OFERTA ---------- */
   .offer-card {
     margin-top: 3rem;
@@ -365,16 +348,6 @@
   .includes { margin: 2.2rem auto 0; max-width: 380px; text-align: left; list-style: none; padding: 0; display: grid; gap: 0.7rem; }
   .includes li { display: flex; gap: 0.7em; font-size: 0.98rem; }
   .includes li::before { content: "✓"; color: var(--gold); font-weight: 700; }
-  .urgency {
-    margin-top: 2.2rem;
-    display: inline-block;
-    background: var(--accent);
-    color: var(--accent-ink);
-    padding: 0.55rem 1.1rem;
-    font-size: 0.82rem;
-    letter-spacing: 0.03em;
-    border-radius: 2px;
-  }
   .offer-card .btn { margin-top: 2rem; }
 
   /* ---------- GARANTIA (selo) ---------- */
@@ -607,38 +580,13 @@
     </div>
   </section>
 
-  <!-- BONUS -->
-  <section class="band band-alt">
-    <div class="wrap reveal">
-      <span class="eyebrow">Incluso na compra</span>
-      <h2 class="section-title">Três ferramentas para sair do papel</h2>
-      <div class="bonus-grid">
-        <div class="bonus-card">
-          <span class="eyebrow">Bônus 01</span>
-          <h3>Checklist imprimível de hábitos diários</h3>
-          <p>Acompanhe seu progresso sem depender de força de vontade.</p>
-        </div>
-        <div class="bonus-card">
-          <span class="eyebrow">Bônus 02</span>
-          <h3>Planejamento semanal de refeições</h3>
-          <p>Organize sua semana em minutos, sem complicação.</p>
-        </div>
-        <div class="bonus-card">
-          <span class="eyebrow">Bônus 03</span>
-          <h3>Lista de compras saudável</h3>
-          <p>Leve para o mercado e elimine a dúvida na hora de escolher.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- OFERTA -->
-  <section class="band" id="oferta">
+  <section class="band band-alt" id="oferta">
     <div class="wrap reveal">
       <span class="eyebrow">Oferta</span>
-      <h2 class="section-title">Garanta seu exemplar com os três bônus</h2>
+      <h2 class="section-title">Garanta seu exemplar agora</h2>
       <div class="offer-card">
-        <span class="eyebrow">Leve & Forte + bônus</span>
+        <span class="eyebrow">Leve & Forte</span>
         <div class="price-row">
           <span class="price-old">R$ 197</span>
           <span class="price-new">R$ 47</span>
@@ -646,12 +594,9 @@
         <p class="price-sub">à vista ou em até 12x no cartão</p>
         <ul class="includes">
           <li>Ebook completo "Leve & Forte" em PDF — acesso imediato</li>
-          <li>Checklist de hábitos diários</li>
-          <li>Planejador semanal de refeições</li>
-          <li>Lista de compras saudável</li>
+          <li>Garantia incondicional de 7 dias</li>
         </ul>
-        <div><span class="urgency">Os 3 bônus são por tempo limitado</span></div>
-        <div><a class="btn btn-primary btn-lg" href="#">Quero meu exemplar + bônus agora</a></div>
+        <div><a class="btn btn-primary btn-lg" href="#">Quero meu exemplar agora</a></div>
       </div>
     </div>
   </section>
@@ -685,7 +630,7 @@
         </details>
         <details class="faq-item">
           <summary>Como recebo o material?</summary>
-          <p>Assim que a compra for confirmada, você recebe o link de acesso por e-mail para baixar o ebook e os bônus em PDF, disponíveis para leitura em celular, tablet ou computador.</p>
+          <p>Assim que a compra for confirmada, você recebe o link de acesso por e-mail para baixar o ebook em PDF, disponível para leitura em celular, tablet ou computador.</p>
         </details>
         <details class="faq-item">
           <summary>Preciso cortar carboidrato, açúcar ou algum grupo alimentar?</summary>
@@ -705,7 +650,7 @@
       <h2>Chega de recomeçar toda segunda-feira</h2>
       <p class="lede">Você já tentou dietas restritivas. Chegou a hora de tentar algo diferente: um método que funciona com a sua rotina, não contra ela.</p>
       <a class="btn btn-primary btn-lg" href="#oferta">Sim, quero emagrecer sem sofrimento — R$ 47</a>
-      <p class="fine">Acesso imediato · Garantia de 7 dias · Bônus por tempo limitado</p>
+      <p class="fine">Acesso imediato · Garantia de 7 dias</p>
     </div>
   </section>
 
